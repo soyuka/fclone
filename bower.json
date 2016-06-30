@@ -1,0 +1,27 @@
+{
+  "name": "@soyuka/clone",
+  "description": "Clone objects recursively by dropping circular references",
+  "main": "dist/clone.js",
+  "authors": [
+    "soyuka"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "clone",
+    "deep",
+    "circular"
+  ],
+  "homepage": "https://github.com/soyuka/clone",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test.js",
+    "!dist/dpicker.js",
+    "!dist/dpicker.min.js",
+    "screen.png",
+    "gulpfile.js",
+    "demo",
+    "bump.sh"
+  ]
+}
