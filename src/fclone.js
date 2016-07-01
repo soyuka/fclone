@@ -4,9 +4,7 @@ function fclone(obj, refs) {
   if (!obj || "object" !== typeof obj) return obj;
 
   if (obj instanceof Date) {
-    let copy = new Date();
-    copy.setTime(obj.getTime());
-    return copy;
+    return new Date(obj);
   }
 
   if (Buffer !== undefined && Buffer.isBuffer(obj)) {
