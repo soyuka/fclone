@@ -1,7 +1,7 @@
 {
-  "name": "soyuka-clone",
+  "name": "fclone",
   "description": "Clone objects recursively by dropping circular references",
-  "main": "dist/clone.js",
+  "main": "dist/fclone.js",
   "authors": [
     "soyuka"
   ],
@@ -9,9 +9,12 @@
   "keywords": [
     "clone",
     "deep",
-    "circular"
+    "circular",
+    "json",
+    "stringify",
+    "json"
   ],
-  "homepage": "https://github.com/soyuka/clone",
+  "homepage": "https://github.com/soyuka/fclone",
   "ignore": [
     "**/.*",
     "node_modules",

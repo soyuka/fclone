@@ -9,26 +9,26 @@ var uml = [
 "(function (root, factory) {",
 "    if (typeof define === 'function' && define.amd) {",
 "        // AMD",
-"        define('soyuka-clone', [], factory);",
+"        define('fclone', [], factory);",
 "    } else if (typeof module === 'object' && module.exports) {",
 "			  //node",
 "        module.exports = factory();",
 "    } else {",
 "        // Browser globals (root is window)",
-"        root.soyuka_clone = factory();",
+"        root.fclone = factory();",
 "    }",
 "}(this, function () {",
 "  <%= contents %>",
-"  return clone",
+"  return fclone",
 "}));"].join(require('os').EOL);
 
 gulp.task('default', function() {
-  return gulp.src(['src/clone.js'])
+  return gulp.src(['src/fclone.js'])
   .pipe(babel({presets: ['es2015']}))
   .pipe(wrap(uml))
   .pipe(gulp.dest('dist'))
   .pipe(uglify())
-  .pipe(rename('clone.min.js'))
+  .pipe(rename('fclone.min.js'))
   .pipe(gulp.dest('dist'))
 })
 

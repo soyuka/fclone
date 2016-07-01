@@ -1,4 +1,4 @@
-# Clone
+# FClone
 
 [![Build Status](https://travis-ci.org/soyuka/clone.svg?branch=master)](https://travis-ci.org/soyuka/clone)
 
@@ -13,37 +13,30 @@ Ideas from [tracker1/safe-clone-deep](https://github.com/tracker1/safe-clone-dee
 ## Installation
 
 ```
-npm install @soyuka/clone
+npm install fclone
 # or
-bower install soyuka-clone
+bower install fclone
 ```
 
 ## Usage
 
 ```
-const clone = require('@soyuka/clone')
+const fclone = require('fclone')
 
 let a = {b: a, c: 'hello'}
-let o = clone(a)
+let o = fclone(a)
 
 console.log(o)
 // outputs: { c: 'hello', b: '[Circular]' }
 ```
-
-## Browser
-
-You can use bower or npm.
-
-Amd defines 'soyuka-clone'
-It'll be `window.clone` if amd is not used or `require('@soyuka/clone')`
 
 ## Benchmarks
 
 Some benchs:
 
 ```
-@soyuka/clone x 13,891 ops/sec ±0.86% (88 runs sampled)
-@soyuka/clone + json.stringify x 7,267 ops/sec ±3.26% (79 runs sampled)
+fclone x 13,891 ops/sec ±0.86% (88 runs sampled)
+fclone + json.stringify x 7,267 ops/sec ±3.26% (79 runs sampled)
 jsan x 4,458 ops/sec ±2.26% (87 runs sampled)
 circularjson x 4,075 ops/sec ±2.77% (85 runs sampled)
 deepcopy x 5,009 ops/sec ±4.59% (76 runs sampled)

@@ -1,7 +1,7 @@
 'use strict';
 
 var expect = require('chai').expect;
-var clone = require('../dist/clone.js');
+var clone = require('../dist/fclone.js');
 
 describe('safeCloneDeep', function(){
   var input, output;

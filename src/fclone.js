@@ -1,6 +1,6 @@
 'use strict';
 
-function clone(obj, refs) {
+function fclone(obj, refs) {
   if (!obj || "object" !== typeof obj) return obj;
 
   if (obj instanceof Date) {
@@ -22,7 +22,7 @@ function clone(obj, refs) {
     let copy = [];
 
     while (l > ++i) {
-      copy[i] = ~refs.indexOf(obj[i]) ? '[Circular]' : clone(obj[i], refs);
+      copy[i] = ~refs.indexOf(obj[i]) ? '[Circular]' : fclone(obj[i], refs);
     }
 
     refs.length && refs.length--
@@ -45,7 +45,7 @@ function clone(obj, refs) {
 
   while(l--) {
     let k = keys[l]
-    copy[k] = ~refs.indexOf(obj[k]) ? '[Circular]' : clone(obj[k], refs);
+    copy[k] = ~refs.indexOf(obj[k]) ? '[Circular]' : fclone(obj[k], refs);
   }
 
   refs.length && refs.length--

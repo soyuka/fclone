@@ -1,6 +1,6 @@
 {
-  "name": "@soyuka/clone",
-  "version": "1.0.1",
+  "name": "fclone",
+  "version": "1.0.0",
   "description": "Clone objects recursively by dropping circular references",
   "main": "dist/index.js",
   "scripts": {
@@ -9,12 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/soyuka/clone.git"
+    "url": "git+https://github.com/soyuka/fclone.git"
   },
   "keywords": [
     "clone",
     "deep",
-    "circular"
+    "circular",
+    "json",
+    "stringify",
+    "json"
   ],
   "author": "soyuka <soyuka@gmail.com>",
   "license": "MIT",
