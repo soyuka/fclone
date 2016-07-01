@@ -12,7 +12,7 @@ Ideas from [tracker1/safe-clone-deep](https://github.com/tracker1/safe-clone-dee
 
 ## Installation
 
-```
+```bash
 npm install fclone
 # or
 bower install fclone
@@ -20,7 +20,7 @@ bower install fclone
 
 ## Usage
 
-```
+```javascript
 const fclone = require('fclone')
 
 let a = {b: a, c: 'hello'}
