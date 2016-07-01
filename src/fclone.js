@@ -36,7 +36,7 @@ function fclone(obj, refs) {
     copy.name = obj.name;
     copy.message = obj.message;
     copy.stack = obj.stack;
-    refs.length--
+    refs.length && refs.length--
     return copy;
   }
 

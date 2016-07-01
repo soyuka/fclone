@@ -35,11 +35,11 @@ console.log(o)
 Some benchs:
 
 ```
-fclone x 13,891 ops/sec ±0.86% (88 runs sampled)
-fclone + json.stringify x 7,267 ops/sec ±3.26% (79 runs sampled)
-jsan x 4,458 ops/sec ±2.26% (87 runs sampled)
-circularjson x 4,075 ops/sec ±2.77% (85 runs sampled)
-deepcopy x 5,009 ops/sec ±4.59% (76 runs sampled)
-json-stringify-safe x 4,883 ops/sec ±2.62% (85 runs sampled)
-Fastest is @soyuka/clone
+fclone x 13,342 ops/sec ±3.83% (79 runs sampled)
+fclone + json.stringify x 7,311 ops/sec ±3.99% (77 runs sampled)
+jsan x 4,419 ops/sec ±3.11% (86 runs sampled)
+circularjson x 4,294 ops/sec ±0.82% (91 runs sampled)
+deepcopy x 5,298 ops/sec ±0.76% (83 runs sampled)
+json-stringify-safe x 5,201 ops/sec ±0.82% (84 runs sampled)
+Fastest is fclone
 ```
