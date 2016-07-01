@@ -1,6 +1,6 @@
 # FClone
 
-[![Build Status](https://travis-ci.org/soyuka/clone.svg?branch=master)](https://travis-ci.org/soyuka/clone)
+[![Build Status](https://travis-ci.org/soyuka/fclone.svg?branch=master)](https://travis-ci.org/soyuka/fclone)
 
 This module clones a Javascript object in safe mode (eg: drops circular values) recursively. Circular values are replaced with a string: `'[Circular]'`.
 
