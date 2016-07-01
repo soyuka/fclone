@@ -36,3 +36,17 @@ You can use bower or npm.
 
 Amd defines 'soyuka-clone'
 It'll be `window.clone` if amd is not used or `require('@soyuka/clone')`
+
+## Benchmarks
+
+Some benchs:
+
+```
+@soyuka/clone x 13,891 ops/sec ±0.86% (88 runs sampled)
+@soyuka/clone + json.stringify x 7,267 ops/sec ±3.26% (79 runs sampled)
+jsan x 4,458 ops/sec ±2.26% (87 runs sampled)
+circularjson x 4,075 ops/sec ±2.77% (85 runs sampled)
+deepcopy x 5,009 ops/sec ±4.59% (76 runs sampled)
+json-stringify-safe x 4,883 ops/sec ±2.62% (85 runs sampled)
+Fastest is @soyuka/clone
+```
