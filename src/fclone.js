@@ -36,8 +36,6 @@ function fclone(obj, refs) {
     copy.name = obj.name;
     copy.message = obj.message;
     copy.stack = obj.stack;
-    refs.length && refs.length--
-    return copy;
   }
 
   let keys = Object.keys(obj);
