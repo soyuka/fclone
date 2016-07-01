@@ -1,6 +1,6 @@
 {
   "name": "fclone",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Clone objects recursively by dropping circular references",
   "main": "dist/index.js",
   "scripts": {
