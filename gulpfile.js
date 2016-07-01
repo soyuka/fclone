@@ -1,26 +1,26 @@
-const gulp = require('gulp')
-const wrap = require('gulp-wrap')
-const rename = require('gulp-rename')
-const babel = require('gulp-babel')
-const uglify = require('gulp-uglify')
+'use strict'
+var gulp = require('gulp')
+var wrap = require('gulp-wrap')
+var rename = require('gulp-rename')
+var babel = require('gulp-babel')
+var uglify = require('gulp-uglify')
 
-const uml = `
-(function (root, factory) {
-    if (typeof define === 'function' && define.amd) {
-        // AMD
-        define('clone', [], factory);
-    } else if (typeof module === 'object' && module.exports) {
-			  //node
-        module.exports = factory();
-    } else {
-        // Browser globals (root is window)
-        root.clone = factory();
-    }
-}(this, function () {
-  <%= contents %>
-  return clone
-}));
-`
+var uml = ''+
+'(function (root, factory) {'+
+'    if (typeof define === 'function' && define.amd) {'+
+'       // AMD'+
+'        define(\'clone\', [], factory);'+
+'    } else if (typeof module === \'object\' && module.exports) {'+
+'		  //node'+
+'        module.exports = factory();'+
+'    } else {'+
+'       // Browser globals (root is window)'+
+'        root.clone = factory();'+
+'    }'+
+'}(this, function () {'+
+'  <%= contents %>'+
+'  return clone'+
+'}));';
 
 gulp.task('default', function() {
   return gulp.src(['src/clone.js'])
