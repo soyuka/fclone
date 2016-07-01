@@ -58,7 +58,7 @@ describe('safeCloneDeep', function(){
 
       var z = clone(new Child());
       expect(z).to.have.property('child',true);
-      expect(z).to.have.property('base', true);
+      expect(z).not.to.have.property('base');
     });
   });
 

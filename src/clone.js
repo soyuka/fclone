@@ -16,33 +16,38 @@ function clone(obj, refs) {
   if (!refs) { refs = []; }
 
   if (Array.isArray(obj)) {
-    refs.push(obj);
+    refs[refs.length] = obj;
     let l = obj.length;
+    let i = -1;
     let copy = [];
 
-    for (let i = 0; i < l; i++) {
+    while (l > ++i) {
       copy[i] = ~refs.indexOf(obj[i]) ? '[Circular]' : clone(obj[i], refs);
     }
 
-    refs.pop();
+    refs.length && refs.length--
     return copy;
   }
 
-  refs.push(obj);
+  refs[refs.length] = obj;
   let copy = {};
 
   if (obj instanceof Error) {
     copy.name = obj.name;
     copy.message = obj.message;
     copy.stack = obj.stack;
-    refs.pop();
+    refs.length--
     return copy;
   }
 
-  for(let i in obj) {
-    copy[i] = ~refs.indexOf(obj[i]) ? '[Circular]' : clone(obj[i], refs);
+  let keys = Object.keys(obj);
+  let l = keys.length;
+
+  while(l--) {
+    let k = keys[l]
+    copy[k] = ~refs.indexOf(obj[k]) ? '[Circular]' : clone(obj[k], refs);
   }
 
-  refs.pop();
+  refs.length && refs.length--
   return copy;
 }

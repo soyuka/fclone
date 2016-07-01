@@ -10,9 +10,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "circular-json-es6": "^2.0.0",
     "clone": "^1.0.2",
-    "deep-clone": "^2.0.2",
     "deepcopy": "^0.6.3",
+    "jsan": "^3.1.2",
     "json-stringify-safe": "^5.0.1"
   },
   "dependencies": {
