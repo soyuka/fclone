@@ -14,6 +14,8 @@ Ideas from [tracker1/safe-clone-deep](https://github.com/tracker1/safe-clone-dee
 
 ```
 npm install @soyuka/clone
+# or
+bower install soyuka-clone
 ```
 
 ## Usage
@@ -32,5 +34,5 @@ console.log(o)
 
 You can use bower or npm.
 
-Amd defines 'Clone'
+Amd defines 'soyuka-clone'
 It'll be `window.clone` if amd is not used or `require('@soyuka/clone')`

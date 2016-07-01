@@ -1,5 +1,5 @@
 {
-  "name": "@soyuka/clone",
+  "name": "soyuka-clone",
   "description": "Clone objects recursively by dropping circular references",
   "main": "dist/clone.js",
   "authors": [
