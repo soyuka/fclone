@@ -23,7 +23,9 @@ bower install fclone
 ```javascript
 const fclone = require('fclone')
 
-let a = {b: a, c: 'hello'}
+let a = {c: 'hello'}
+a.b = a
+
 let o = fclone(a)
 
 console.log(o)
