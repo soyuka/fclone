@@ -5,7 +5,7 @@ var rename = require('gulp-rename')
 var babel = require('gulp-babel')
 var uglify = require('gulp-uglify')
 
-var uml = [
+var umd = [
 "(function (root, factory) {",
 "    if (typeof define === 'function' && define.amd) {",
 "        // AMD",
@@ -25,7 +25,7 @@ var uml = [
 gulp.task('default', function() {
   return gulp.src(['src/fclone.js'])
   .pipe(babel({presets: ['es2015']}))
-  .pipe(wrap(uml))
+  .pipe(wrap(umd))
   .pipe(gulp.dest('dist'))
   .pipe(uglify())
   .pipe(rename('fclone.min.js'))
