@@ -7,7 +7,7 @@ function fclone(obj, refs) {
     return new Date(obj);
   }
 
-  if (Buffer !== undefined && Buffer.isBuffer(obj)) {
+  if (typeof Buffer !== 'undefined' && Buffer.isBuffer(obj)) {
     return new Buffer(obj);
   }
 
