@@ -90,4 +90,14 @@ describe('safeCloneDeep', function(){
       expect(output.c).to.have.property('x',3);
     });
   });
+
+  it('clones', function() {
+   var t = {foo: 'bar', bar: 'foo'}
+   var o = clone(t)
+
+   delete t.foo
+
+   expect(t.foo).to.be.undefine
+   expect(o.foo).to.equal('bar')
+  })
 });
