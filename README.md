@@ -1,5 +1,7 @@
 # FClone
 
+Fastest JSON cloning module that handles circular references
+
 [![Build Status](https://travis-ci.org/soyuka/fclone.svg?branch=master)](https://travis-ci.org/soyuka/fclone)
 
 This module clones a Javascript object in safe mode (eg: drops circular values) recursively. Circular values are replaced with a string: `'[Circular]'`.
@@ -7,7 +9,7 @@ This module clones a Javascript object in safe mode (eg: drops circular values) 
 Ideas from [tracker1/safe-clone-deep](https://github.com/tracker1/safe-clone-deep). I improved the workflow a bit by:
 - refactoring the code (complete rewrite)
 - fixing node 6+
-- minor performance tweaks
+- micro optimizations
 - use of `Array.isArray` and `Buffer.isBuffer`
 
 ## Installation
@@ -45,3 +47,5 @@ deepcopy x 5,298 ops/sec ±0.76% (83 runs sampled)
 json-stringify-safe x 5,201 ops/sec ±0.82% (84 runs sampled)
 Fastest is fclone
 ```
+
+If you want to keep references and you can use ES6 maps, I recommend [deep-clone](https://github.com/thebearingedge/deep-clone/).

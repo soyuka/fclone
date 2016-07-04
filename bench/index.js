@@ -15,7 +15,7 @@ a.a = a
 a.c.complex = a.complex
 a.env = process.env
 
-const soyuka_clone = require('../dist/fclone.js')
+const fclone = require('../dist/fclone.js')
 const clone = require('clone')
 const deepcopy = require('deepcopy')
 const jsonstringifysafe = require('json-stringify-safe')
@@ -24,10 +24,10 @@ const circularjson = require('circular-json-es6')
 
 suite
 .add('fclone', function() {
-  let b = soyuka_clone(a)
+  let b = fclone(a)
 })
 .add('fclone + json.stringify', function() {
-  let b = JSON.stringify(soyuka_clone(a))
+  let b = JSON.stringify(fclone(a))
 })
 .add('jsan', function() {
   let b = jsan.stringify(a)
@@ -40,6 +40,9 @@ suite
 })
 .add('json-stringify-safe', function() {
   let b = jsonstringifysafe(a)
+})
+.add('clone', function() {
+  let b = clone(a)
 })
 .on('cycle', function(event) {
   console.log(String(event.target))

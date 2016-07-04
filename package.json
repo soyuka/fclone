@@ -1,7 +1,7 @@
 {
   "name": "fclone",
   "version": "1.0.6",
-  "description": "Clone objects recursively by dropping circular references",
+  "description": "Fastest JSON cloning module that handles circular references",
   "main": "dist/fclone.js",
   "scripts": {
     "test": "./node_modules/.bin/_mocha",
@@ -17,7 +17,7 @@
     "circular",
     "json",
     "stringify",
-    "json"
+    "fast"
   ],
   "author": "soyuka <soyuka@gmail.com>",
   "license": "MIT",
