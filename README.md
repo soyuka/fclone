@@ -47,5 +47,3 @@ deepcopy x 5,298 ops/sec ±0.76% (83 runs sampled)
 json-stringify-safe x 5,201 ops/sec ±0.82% (84 runs sampled)
 Fastest is fclone
 ```
-
-If you want to keep references and you can use ES6 maps, I recommend [deep-clone](https://github.com/thebearingedge/deep-clone/).
