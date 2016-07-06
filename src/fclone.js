@@ -23,7 +23,7 @@ function fclone(obj, refs) {
       copy[i] = ~refs.indexOf(obj[i]) ? '[Circular]' : fclone(obj[i], refs);
     }
 
-    refs.length && refs.length--
+    refs.length && refs.length--;
     return copy;
   }
 
@@ -40,10 +40,10 @@ function fclone(obj, refs) {
   let l = keys.length;
 
   while(l--) {
-    let k = keys[l]
+    let k = keys[l];
     copy[k] = ~refs.indexOf(obj[k]) ? '[Circular]' : fclone(obj[k], refs);
   }
 
-  refs.length && refs.length--
+  refs.length && refs.length--;
   return copy;
 }
