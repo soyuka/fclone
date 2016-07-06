@@ -23,15 +23,18 @@ bower install fclone
 ## Usage
 
 ```javascript
-const fclone = require('fclone')
+const fclone = require('fclone');
 
-let a = {c: 'hello'}
-a.b = a
+let a = {c: 'hello'};
+a.b = a;
 
-let o = fclone(a)
+let o = fclone(a);
 
-console.log(o)
+console.log(o);
 // outputs: { c: 'hello', b: '[Circular]' }
+
+//JSON.stringify is now safe
+console.log(JSON.stringify(o));
 ```
 
 ## Benchmarks
