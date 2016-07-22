@@ -21,6 +21,7 @@ const deepcopy = require('deepcopy')
 const jsonstringifysafe = require('json-stringify-safe')
 const jsan = require('jsan')
 const circularjson = require('circular-json-es6')
+const util = require('util')
 
 suite
 .add('fclone', function() {
@@ -28,6 +29,9 @@ suite
 })
 .add('fclone + json.stringify', function() {
   let b = JSON.stringify(fclone(a))
+})
+.add('util.inspect (outputs a string)', function() {
+  let b = util.inspect(a)
 })
 .add('jsan', function() {
   let b = jsan.stringify(a)

@@ -12,6 +12,8 @@ Ideas from [tracker1/safe-clone-deep](https://github.com/tracker1/safe-clone-dee
 - micro optimizations
 - use of `Array.isArray` and `Buffer.isBuffer`
 
+Node 0.10 compatible, distributed files are translated to es2015.
+
 ## Installation
 
 ```bash
@@ -42,11 +44,13 @@ console.log(JSON.stringify(o));
 Some benchs:
 
 ```
-fclone x 13,342 ops/sec ±3.83% (79 runs sampled)
-fclone + json.stringify x 7,311 ops/sec ±3.99% (77 runs sampled)
-jsan x 4,419 ops/sec ±3.11% (86 runs sampled)
-circularjson x 4,294 ops/sec ±0.82% (91 runs sampled)
-deepcopy x 5,298 ops/sec ±0.76% (83 runs sampled)
-json-stringify-safe x 5,201 ops/sec ±0.82% (84 runs sampled)
-Fastest is fclone
+fclone x 17,081 ops/sec ±0.71% (79 runs sampled)
+fclone + json.stringify x 9,433 ops/sec ±0.91% (81 runs sampled)
+util.inspect (outputs a string) x 2,498 ops/sec ±0.77% (90 runs sampled)
+jsan x 5,379 ops/sec ±0.82% (91 runs sampled)
+circularjson x 4,719 ops/sec ±1.16% (91 runs sampled)
+deepcopy x 5,478 ops/sec ±0.77% (86 runs sampled)
+json-stringify-safe x 5,828 ops/sec ±1.30% (84 runs sampled)
+clone x 8,713 ops/sec ±0.68% (88 runs sampled)
+Fastest is util.format (outputs a string)
 ```
