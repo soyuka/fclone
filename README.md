@@ -1,6 +1,6 @@
 # FClone
 
-Fastest JSON cloning module that handles circular references
+Clone objects by dropping circular references 
 
 [![Build Status](https://travis-ci.org/soyuka/fclone.svg?branch=master)](https://travis-ci.org/soyuka/fclone)
 
