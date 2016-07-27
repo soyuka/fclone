@@ -1,5 +1,13 @@
 'use strict';
 
+// see if it looks and smells like an iterable object, and do accept length === 0
+function isArrayLike(item) {
+  if (Array.isArray(item)) return true;
+
+  var len = item && item.length;
+  return typeof len === 'number' && (len === 0 || (len - 1) in item);
+}
+
 function fclone(obj, refs) {
   if (!obj || "object" !== typeof obj) return obj;
 
@@ -11,9 +19,23 @@ function fclone(obj, refs) {
     return new Buffer(obj);
   }
 
+  // typed array
+  switch (Object.prototype.toString.call(obj)) {
+    case '[object Uint8Array]':
+    case '[object Uint8ClampedArray]':
+    case '[object Uint16Array]':
+    case '[object Uint32Array]':
+    case '[object Int8Array]':
+    case '[object Int16Array]':
+    case '[object Int32Array]':
+    case '[object Float32Array]':
+    case '[object Float64Array]':
+      return obj.subarray(0);
+  }
+
   if (!refs) { refs = []; }
 
-  if (Array.isArray(obj)) {
+  if (isArrayLike(obj)) {
     refs[refs.length] = obj;
     let l = obj.length;
     let i = -1;
