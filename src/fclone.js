@@ -4,7 +4,7 @@
 function isArrayLike(item) {
   if (Array.isArray(item)) return true;
 
-  var len = item && item.length;
+  const len = item && item.length;
   return typeof len === 'number' && (len === 0 || (len - 1) in item);
 }
 
