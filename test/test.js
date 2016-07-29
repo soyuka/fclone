@@ -100,4 +100,21 @@ describe('safeCloneDeep', function(){
    expect(t.foo).to.be.undefine
    expect(o.foo).to.equal('bar')
   })
+
+  it('should clone Uint8Array', function() {
+   let t = new Uint8Array(3).fill(0)
+
+   let o = clone(t)
+
+   expect(o).to.be.an.instanceof(Uint8Array)
+   expect(o).to.have.length.of(3)
+  })
+
+  it('should not clone this array-like as array', function() {
+   let t = {length: 3, 0: 'test', 1: 'test', 2: 'test'}
+
+   let o = clone(t)
+
+   expect(o).to.deep.equal(t)
+  })
 });

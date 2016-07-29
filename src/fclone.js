@@ -5,7 +5,7 @@ function isArrayLike(item) {
   if (Array.isArray(item)) return true;
 
   const len = item && item.length;
-  return typeof len === 'number' && (len === 0 || (len - 1) in item);
+  return typeof len === 'number' && (len === 0 || (len - 1) in item) && typeof item.indexOf === 'function';
 }
 
 function fclone(obj, refs) {
