@@ -73,7 +73,10 @@ describe('fclone', function(){
     })
 
     it('an Uint8Array', function() {
-     var t = new Uint8Array(3).fill(0)
+     var t = new Uint8Array(3)
+     ;[0,1,2].map(function(e) {
+       t[e] = 0
+     })
 
      var o = clone(t)
 
