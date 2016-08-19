@@ -19,18 +19,9 @@ function fclone(obj, refs) {
     return new Buffer(obj);
   }
 
-  // typed array
-  switch (Object.prototype.toString.call(obj)) {
-    case '[object Uint8Array]':
-    case '[object Uint8ClampedArray]':
-    case '[object Uint16Array]':
-    case '[object Uint32Array]':
-    case '[object Int8Array]':
-    case '[object Int16Array]':
-    case '[object Int32Array]':
-    case '[object Float32Array]':
-    case '[object Float64Array]':
-      return obj.subarray(0);
+  // typed array Int32Array etc.
+  if (/\d[a-z]*Array]$/i.test(Object.prototype.toString.call(obj))) {
+    return obj.subarray(0);
   }
 
   if (!refs) { refs = []; }
