@@ -20,7 +20,7 @@ function fclone(obj, refs) {
   }
 
   // typed array Int32Array etc.
-  if (obj.subarray  && typeof obj.subarray === 'function' && /^[A-Z][A-Za-z\d]+Array$/.test(Object.prototype.toString.call(obj))) {
+  if (typeof obj.subarray === 'function' && /[A-Z][A-Za-z\d]+Array/.test(Object.prototype.toString.call(obj))) {
     return obj.subarray(0);
   }
 
