@@ -24,6 +24,12 @@ describe('fclone', function(){
 
   describe('it will clone', function(){
 
+    it('a string', function() {
+      var i = ''
+      var o = clone(i)
+      expect(o).to.equal(i)
+    })
+
     it('an object', function() {
      var t = {foo: 'bar', bar: 'foo'}
      var o = clone(t)
@@ -90,6 +96,14 @@ describe('fclone', function(){
      var o = clone(t)
 
      expect(o).to.deep.equal(t)
+    })
+
+    it('a uint8array like', function() {
+     var t = {subarray: function() { return 'fail'}}
+     var o = clone(t)
+
+     expect(o).not.to.equal('fail')
+     expect(o.subarray()).to.equal('fail')
     })
   })
 
