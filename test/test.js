@@ -22,7 +22,7 @@ describe('fclone', function(){
     input = a
   })
 
-  describe('it will clone', function(){
+  describe('will clone', function(){
 
     it('an object', function() {
      var t = {foo: 'bar', bar: 'foo'}
@@ -41,21 +41,21 @@ describe('fclone', function(){
       expect(a).to.not.equal(b)
     })
 
-    it ('a Buffer', function(){
+    it('a Buffer', function(){
       var a = new Buffer('this is a test')
       var b = clone(a)
       expect(a.toString()).to.equal(b.toString())
       expect(a).to.not.equal(b)
     })
 
-    it ('an Error\'s properties', function(){
+    it('an Error\'s properties', function(){
       var a = new Error("this is a test")
       var b = clone(a)
 
       expect(a).to.not.equal(b)
-      expect(b).to.have.property('name',a.name)
-      expect(b).to.have.property('message',a.message)
-      expect(b).to.have.property('stack',a.stack)
+      expect(b).to.have.property('name', a.name)
+      expect(b).to.have.property('message', a.message)
+      expect(b).to.have.property('stack', a.stack)
     })
 
     it('an inherited property', function(){
@@ -93,7 +93,7 @@ describe('fclone', function(){
     })
   })
 
-  describe('not clone circular', function(){
+  describe('will not clone circular data', function(){
     beforeEach(function(){
       output = clone(input)
     })
