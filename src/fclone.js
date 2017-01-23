@@ -60,3 +60,5 @@ function fclone(obj, refs) {
   refs.length && refs.length--;
   return copy;
 }
+
+fclone.default = fclone

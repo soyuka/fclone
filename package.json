@@ -2,7 +2,7 @@
   "name": "fclone",
   "version": "1.0.9",
   "description": "Clone objects by dropping circular references",
-  "main": "dist/fclone.js",
+  "main": "dist/fclone",
   "scripts": {
     "test": "./node_modules/.bin/_mocha",
     "build": "./node_modules/.bin/gulp"
