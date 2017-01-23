@@ -1,6 +1,6 @@
 {
   "name": "fclone",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Clone objects by dropping circular references",
   "main": "dist/fclone",
   "scripts": {
