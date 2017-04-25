@@ -44,15 +44,17 @@ console.log(JSON.stringify(o));
 Some benchs:
 
 ```
-fclone x 13,206 ops/sec ±1.61% (87 runs sampled)
-fclone + json.stringify x 6,366 ops/sec ±4.00% (81 runs sampled)
-fast-safe-stringify x 6,373 ops/sec ±2.01% (82 runs sampled)
-fast-safe-stringify + stringify x 5,633 ops/sec ±1.65% (84 runs sampled)
-util.inspect (outputs a string) x 1,519 ops/sec ±2.31% (78 runs sampled)
-jsan x 3,739 ops/sec ±1.08% (85 runs sampled)
-circularjson x 3,435 ops/sec ±0.93% (85 runs sampled)
-deepcopy x 4,635 ops/sec ±2.67% (85 runs sampled)
-json-stringify-safe x 6,251 ops/sec ±2.44% (89 runs sampled)
-clone x 7,839 ops/sec ±1.52% (87 runs sampled)
-Fastest is fclone
+# Clone
+fclone (not a string) x 14,121 ops/sec ±0.75% (89 runs sampled)
+clone (not a string) x 9,293 ops/sec ±0.93% (90 runs sampled)
+deepcopy (not a string) x 5,375 ops/sec ±0.73% (92 runs sampled)
+
+# Stringify
+fclone + json.stringify x 8,289 ops/sec ±0.74% (90 runs sampled)
+fast-safe-stringify x 8,241 ops/sec ±0.48% (92 runs sampled)
+util.inspect (outputs a string) x 2,115 ops/sec ±0.84% (89 runs sampled)
+jsan x 5,090 ops/sec ±0.65% (92 runs sampled)
+circularjson x 4,471 ops/sec ±0.67% (92 runs sampled)
+json-stringify-safe x 7,150 ops/sec ±0.97% (91 runs sampled)
+Fastest is fclone (not a string)
 ```

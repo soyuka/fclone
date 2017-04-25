@@ -25,7 +25,7 @@ const util = require('util')
 const fastsafestringify = require('fast-safe-stringify')
 
 suite
-.add('fclone', function() {
+.add('fclone (not a string)', function() {
   let b = fclone(a)
 })
 .add('fclone + json.stringify', function() {
@@ -33,9 +33,6 @@ suite
 })
 .add('fast-safe-stringify', function() {
   let b = fastsafestringify(a)
-})
-.add('fast-safe-stringify + stringify', function() {
-  let b = JSON.stringify(fastsafestringify(a))
 })
 .add('util.inspect (outputs a string)', function() {
   let b = util.inspect(a)
@@ -46,13 +43,13 @@ suite
 .add('circularjson', function() {
   let b = circularjson.stringify(a)
 })
-.add('deepcopy', function() {
+.add('deepcopy (not a string)', function() {
   let b = deepcopy(a)
 })
 .add('json-stringify-safe', function() {
   let b = jsonstringifysafe(a)
 })
-.add('clone', function() {
+.add('clone (not a string)', function() {
   let b = clone(a)
 })
 .on('cycle', function(event) {
