@@ -1,6 +1,6 @@
 # FClone
 
-Clone objects by dropping circular references 
+Clone objects by dropping circular references
 
 [![Build Status](https://travis-ci.org/soyuka/fclone.svg?branch=master)](https://travis-ci.org/soyuka/fclone)
 
@@ -44,13 +44,15 @@ console.log(JSON.stringify(o));
 Some benchs:
 
 ```
-fclone x 17,081 ops/sec ±0.71% (79 runs sampled)
-fclone + json.stringify x 9,433 ops/sec ±0.91% (81 runs sampled)
-util.inspect (outputs a string) x 2,498 ops/sec ±0.77% (90 runs sampled)
-jsan x 5,379 ops/sec ±0.82% (91 runs sampled)
-circularjson x 4,719 ops/sec ±1.16% (91 runs sampled)
-deepcopy x 5,478 ops/sec ±0.77% (86 runs sampled)
-json-stringify-safe x 5,828 ops/sec ±1.30% (84 runs sampled)
-clone x 8,713 ops/sec ±0.68% (88 runs sampled)
-Fastest is util.format (outputs a string)
+fclone x 13,206 ops/sec ±1.61% (87 runs sampled)
+fclone + json.stringify x 6,366 ops/sec ±4.00% (81 runs sampled)
+fast-safe-stringify x 6,373 ops/sec ±2.01% (82 runs sampled)
+fast-safe-stringify + stringify x 5,633 ops/sec ±1.65% (84 runs sampled)
+util.inspect (outputs a string) x 1,519 ops/sec ±2.31% (78 runs sampled)
+jsan x 3,739 ops/sec ±1.08% (85 runs sampled)
+circularjson x 3,435 ops/sec ±0.93% (85 runs sampled)
+deepcopy x 4,635 ops/sec ±2.67% (85 runs sampled)
+json-stringify-safe x 6,251 ops/sec ±2.44% (89 runs sampled)
+clone x 7,839 ops/sec ±1.52% (87 runs sampled)
+Fastest is fclone
 ```

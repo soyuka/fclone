@@ -22,6 +22,7 @@ const jsonstringifysafe = require('json-stringify-safe')
 const jsan = require('jsan')
 const circularjson = require('circular-json-es6')
 const util = require('util')
+const fastsafestringify = require('fast-safe-stringify')
 
 suite
 .add('fclone', function() {
@@ -29,6 +30,12 @@ suite
 })
 .add('fclone + json.stringify', function() {
   let b = JSON.stringify(fclone(a))
+})
+.add('fast-safe-stringify', function() {
+  let b = fastsafestringify(a)
+})
+.add('fast-safe-stringify + stringify', function() {
+  let b = JSON.stringify(fastsafestringify(a))
 })
 .add('util.inspect (outputs a string)', function() {
   let b = util.inspect(a)

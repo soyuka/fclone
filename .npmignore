@@ -1,8 +1,2 @@
-demo
-!dist/dpicker.js
-!dist/dpicker.min.js
-test.js
-gulpfile.js
-screen.png
+!dist
 bower_components
-bump.sh
