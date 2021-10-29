@@ -48,6 +48,7 @@ Some benchs:
 fclone (not a string) x 14,121 ops/sec ±0.75% (89 runs sampled)
 clone (not a string) x 9,293 ops/sec ±0.93% (90 runs sampled)
 deepcopy (not a string) x 5,375 ops/sec ±0.73% (92 runs sampled)
+rfdc x 12,786 ops/sec ±1.31% (91 runs sampled)
 
 # Stringify
 fclone + json.stringify x 8,289 ops/sec ±0.74% (90 runs sampled)

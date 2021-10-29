@@ -32,6 +32,6 @@ gulp.task('default', function() {
   .pipe(gulp.dest('dist'))
 })
 
-gulp.task('watch', ['default'], function() {
+gulp.task('watch', gulp.series('default', function() {
   gulp.watch('src/*.js', ['default'])
-})
+}))

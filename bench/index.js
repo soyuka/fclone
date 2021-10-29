@@ -23,6 +23,7 @@ const jsan = require('jsan')
 const circularjson = require('circular-json-es6')
 const util = require('util')
 const fastsafestringify = require('fast-safe-stringify')
+const rfdc = require('rfdc')({circles: true})
 
 suite
 .add('fclone (not a string)', function() {
@@ -30,6 +31,9 @@ suite
 })
 .add('fclone + json.stringify', function() {
   let b = JSON.stringify(fclone(a))
+})
+.add('rfdc', function() {
+  let b = rfdc(a)
 })
 .add('fast-safe-stringify', function() {
   let b = fastsafestringify(a)

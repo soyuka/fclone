@@ -48,7 +48,7 @@ describe('fclone', function(){
     })
 
     it('a Buffer', function(){
-      var a = new Buffer('this is a test')
+      var a = Buffer.from('this is a test')
       var b = clone(a)
       expect(a.toString()).to.equal(b.toString())
       expect(a).to.not.equal(b)

@@ -16,11 +16,11 @@ function fclone(obj, refs) {
   }
 
   if (typeof Buffer !== 'undefined' && Buffer.isBuffer(obj)) {
-    return new Buffer(obj);
+    return Buffer.from(obj);
   }
 
   // typed array Int32Array etc.
-  if (typeof obj.subarray === 'function' && /[A-Z][A-Za-z\d]+Array/.test(Object.prototype.toString.call(obj))) {
+  if (ArrayBuffer.isView(obj)) {
     return obj.subarray(0);
   }
 
